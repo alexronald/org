@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './componente/Header/Header.js';
+import Formulario from './componente/Formulario/Formulario.js';
 
 
 function App() {
   return (
-    <div className="App">
+    <div >
       
       <Header/>
-      
+      <Formulario/>
     </div>
   );
 }
