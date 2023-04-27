@@ -18,6 +18,8 @@ function Formulario(props){
             foto:foto,
             equipo:equipo
         }
+        console.log(props.registrarColaborador(datosEnviar));
+        props.registrarColaborador(datosEnviar)
     }
     return <section className="formulario">
         <form onSubmit={manejarEnvio}>

@@ -4,16 +4,28 @@ import Header from './componente/Header/Header.js';
 import Formulario from './componente/Formulario/Formulario.js';
 import MiOrg from './componente/MiOrg/MiOrg';
 import Equipo from './componente/Equipo';
+import Footer from './componente/Footer';
 
 
 
 function App() {
   const [mostrarFormulario, actualizarMostra] = useState(true)
+  const [colaboradores, actualizarColavoradores]=useState([])
 
   const cambiarMostra=()=>{
     actualizarMostra(!mostrarFormulario)
   }
 
+  const registrarColaborador = (colaborador)=>{
+    console.log("nuevo colaborador",colaborador)
+
+    //spread operator
+    actualizarColavoradores([...colaboradores,colaborador])
+  }
+
+  const eliminarColaborador=()=>{
+    console.log("eliminar colaborador")
+  }
   const equipos = [
     {
       titulo:"Programación",
@@ -55,13 +67,19 @@ function App() {
     <div >
       
       <Header/>
-      {mostrarFormulario === true ? <Formulario equipos={equipos.map((equipo)=>equipo.titulo)}/> : <></>}
+      {
+      mostrarFormulario === true ? <Formulario equipos={equipos.map((equipo)=>equipo.titulo)}
+      registrarColaborador={registrarColaborador}
+      /> : <></>
+      }
+
       <MiOrg cambiarMostra = {cambiarMostra}/>
       {
         equipos.map((equipo)=>{
-          return <Equipo  datos ={equipo} key={equipo.titulo}/>
+          return <Equipo  datos ={equipo} key={equipo.titulo} colaboradores={colaboradores.filter(colaborador=>colaborador.equipo===equipo.titulo)} eliminarColaborador={eliminarColaborador}/>
         })
       }
+      <Footer/>
     </div>
   );
 }
