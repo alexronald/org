@@ -16,7 +16,7 @@ function App() {
     {
       id:uuid(),
       equipo:"UX y Diseño",
-      foto:"https://www.facebook.com/profile.php?id=100086531473650",
+      foto:"https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci9iZTg5MzI3MjBiN2M4YzhmNmJjNTk3OTllMmY3MWM5NT9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.3EDmMihyk3RqqbUQdRwIbz50UHNWpmbd04gKAM23cqI",
       nombre:"ales",
       puesto:"colaborador",
       fav:false
